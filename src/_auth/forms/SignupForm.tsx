@@ -1,3 +1,4 @@
+import Loady from "@/components/shared/Loader";
 import { Button } from "@/components/ui/button";
 import {
   Form, FormControl,
@@ -6,14 +7,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { SignupValidation } from "@/lib/validation";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 
 const SignUpForm = () => {
 
-  const isLoading = true;
+  const isLoading = false;
 
     // 1. Define your form.
     const form = useForm<z.infer<typeof SignupValidation>>({
@@ -37,7 +37,7 @@ const SignUpForm = () => {
       <div className="sm:w-420 flex-center flex-col">
         <img src="/assets/images/logo.svg" alt="logo"/>
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">Create your account</h2>
-        <p className="text-light-3 small-medium md:base-regular mt-2 ">To use Devgram enter your account details</p>
+        <p className="text-light-3 small-medium md:base-regular mt-2 ">To use Devgram,please enter your account details</p>
     <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-5 w-full">
       <FormField
         control={form.control}
@@ -97,7 +97,7 @@ const SignUpForm = () => {
       <Button type="submit" className="shad-button_primary">
       {isLoading ? (
         <div role="flex-center gap-2">
-          <Loader/>
+          <Loady />
         </div>
       ):
       'Submit'

@@ -1,6 +1,6 @@
 
 import Load from '../../../public/assets/icons/loader.svg';
-const Loader = () => {
+const Loady = () => {
   return (
     <div className="flex-center w-full">
       <img
@@ -13,4 +13,4 @@ const Loader = () => {
   )
 }
 
-export default Loader
+export default Loady

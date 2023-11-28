@@ -18,7 +18,10 @@ const isAuthenticated = false;
         <Outlet/>
       </section>
 
-      <img src={SideImage} alt='The image'/>
+      <img
+        className='hidden xl:block h-screen w-1/2 object-cover bg-no-repeat '
+        src={SideImage}
+        alt='The image'/>
       </>
     )
     }

@@ -6,11 +6,14 @@ import {
 import { Input } from "@/components/ui/input";
 import { SignupValidation } from "@/lib/validation";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Loader } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 
 const SignUpForm = () => {
+
+  const isLoading = true;
 
     // 1. Define your form.
     const form = useForm<z.infer<typeof SignupValidation>>({
@@ -91,7 +94,15 @@ const SignUpForm = () => {
           </FormItem>
         )}
       />
-      <Button type="submit" className="shad-button_primary">Submit</Button>
+      <Button type="submit" className="shad-button_primary">
+      {isLoading ? (
+        <div role="flex-center gap-2">
+          <Loader/>
+        </div>
+      ):
+      'Submit'
+      }
+      </Button>
     </form>
     </div>
   </Form>
